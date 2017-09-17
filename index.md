@@ -1,4 +1,4 @@
-[![Pfim-viewer](pfim-viewer.png)](/pfim-viewer.png)
+[![Pfim-viewer](img/pfim-viewer.png)](img/pfim-viewer.png)
 
 *A sample WPF interface that uses the Pfim library to load Targa and DDS images. Images are not my own*
 
@@ -64,7 +64,7 @@ These libraries competed in decoding the following images:
 - A small (64x64) DXT3 encoded DDS image
 - A small (64x64) DXT5 encoded DDS image
 
-[![Pfim-benchmark1](benchmark.png)](/benchmark.png)
+[![Pfim-benchmark1](img/benchmark.png)](img/benchmark.png)
 
 The light blue is Pfim. Notice that it sets the record for highest throughput for each category relative to all the other decoders benchmarked.
 
