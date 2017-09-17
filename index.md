@@ -102,7 +102,7 @@ private static BitmapSource LoadImage(IImage image)
 
 ## Release Notes
 
-### 0.4.0 - Unreleased
+### 0.4.0 - September 17th 2017
 * Released for netstandard 1.3
 * 25% performance improvement on compressed dds images
 * Bugfix in compressed targa decoder
