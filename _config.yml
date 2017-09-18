@@ -3,7 +3,7 @@ description: >
    C# fast image decoder that can work targa (.tga) and direct draw surface (.dds) images
 markdown: kramdown
 theme: jekyll-theme-cayman
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
