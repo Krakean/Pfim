@@ -102,6 +102,10 @@ private static BitmapSource LoadImage(IImage image)
 
 ## Release Notes
 
+### 0.4.1 - October 9th 2017
+* Fix decoding of non-square uncompressed targa images
+* Fix edge case decoding for compressed targa images
+
 ### 0.4.0 - September 17th 2017
 * Released for netstandard 1.3
 * 25% performance improvement on compressed dds images
