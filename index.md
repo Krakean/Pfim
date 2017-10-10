@@ -102,6 +102,9 @@ private static BitmapSource LoadImage(IImage image)
 
 ## Release Notes
 
+### 0.4.2 - October 10th 2017
+* Release .NET Standard 1.0 version that doesn't contain File IO
+
 ### 0.4.1 - October 9th 2017
 * Fix decoding of non-square uncompressed targa images
 * Fix edge case decoding for compressed targa images
