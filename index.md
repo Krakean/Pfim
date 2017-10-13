@@ -100,6 +100,36 @@ private static BitmapSource LoadImage(IImage image)
 }
 {% endhighlight %}
 
+Below is the code used in the Windows Forms sample, Pfim.Viewer.Forms (also found in the source code).
+
+{% highlight csharp %}
+var image = Pfim.FromFile(dialog.FileName);
+
+PixelFormat format;
+switch (image.Format)
+{
+    case ImageFormat.Rgb24:
+        format = PixelFormat.Format24bppRgb;
+        break;
+
+    case ImageFormat.Rgba32:
+        format = PixelFormat.Format32bppArgb;
+        break;
+
+    default:
+        throw new Exception("Format not recognized");
+}
+
+unsafe
+{
+    fixed (byte* p = image.Data)
+    {
+        var bitmap = new Bitmap(image.Width, image.Height, image.Stride, format, (IntPtr) p);
+        pictureBox.Image = bitmap;
+    }
+}
+{% endhighlight %}
+
 ## Release Notes
 
 ### 0.4.2 - October 10th 2017
