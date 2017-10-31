@@ -132,6 +132,10 @@ unsafe
 
 ## Release Notes
 
+### 0.4.4 - October 31st 2017
+* Fix red and blue color swap for TopLeft encoded targa images
+* 20x performance improvement for TopLeft encoded targa images
+
 ### 0.4.3 - October 31st 2017
 * Fix infinite loop on certain large targa and dds images
 
