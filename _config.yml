@@ -1,6 +1,6 @@
 title: Pfim
 description: >
-   C# fast image decoder that can work targa (.tga) and direct draw surface (.dds) images
+   Fast .NET image decoder for targa (.tga) and direct draw surface (.dds) images
 markdown: kramdown
 theme: jekyll-theme-cayman
 plugins:
