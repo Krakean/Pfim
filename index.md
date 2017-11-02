@@ -2,15 +2,16 @@
 
 *A sample WPF interface that uses the Pfim library to load Targa and DDS images. Images are not my own*
 
+Pfim is a .NET Standard 1.0 compatible Targa (tga) and Direct Draw Surface
+(dds) decoding library with an emphasis on speed and ease of use. Pfim can be
+used on your linux server, Windows Form, or WPF app!
+
 ## Motivation
 
 I needed a C# [Targa](https://en.wikipedia.org/wiki/Truevision_TGA) and
 [Direct Draw Surface (DDS)](https://en.wikipedia.org/wiki/DirectDraw_Surface)
-decoder and the ones out there didn't satisfy my needs, so I wrote my own.
-
-Pfim fills this role by being entirely written in .NET (eases cross platform
-worries) with an easy to learn API. Pfim also clocks in as one of the fastest
-(if not the fastest) implementation. See the benchmarks for more information.
+decoder and the ones out there didn't satisfy my performance needs and portability,
+so I wrote my own.
 
 ## Installation
 
@@ -18,10 +19,9 @@ worries) with an easy to learn API. Pfim also clocks in as one of the fastest
 
 ## Usage
 
-Pfim emphasizes on being frontend and backend agnostic. This means that you
-can add Pfim to your server, Windows Form, or WPF app! The downside is that
-you may have to put in a little work to get into a useable form, but as you'll
-see it is not that hard!
+Pfim emphasizes on being frontend and backend agnostic. While it can be used
+anywhere, the downside is that you may need some code to display the image in
+whatever form desired, but as you'll see it is not that hard!
 
 {% highlight csharp %}
 // Load image from file path
@@ -43,17 +43,23 @@ IImage image2 = Targa.Create(stream);
 
 ## Benchmarks
 
-The following contestants:
+The contestants:
 
 - Pfim
 - [DevIL](http://openil.sourceforge.net/)
 - [FreeImage](http://freeimage.sourceforge.net/)
 - [ImageMagick](https://www.imagemagick.org/script/index.php)
 - [TargaImage](https://www.codeproject.com/Articles/31702/NET-Targa-Image-Reader)
+- [ImageFormats](https://github.com/dbrant/imageformats)
+- [StbSharp](https://github.com/rds1983/StbSharp)
 
-**Caveat**: These libraries do much more than decode images, and may not have the time or want the sacrifice that may come with optimizing the decoding process.
+[![Pfim-benchmark1](img/benchmark.png)](img/benchmark.png)
 
-These libraries competed in decoding the following images:
+Notice that it sets the record for highest throughput for each category relative to all the other decoders benchmarked.
+
+**Caveat**: Some libraries do much more than decode images, and may not have the time or want the sacrifice that may come with optimizing the decoding process.
+
+Image definitions:
 
 - A large (1200x1200) 24bit (no alpha component) targa image
 - A small (64x64) 24bit (no alpha component) targa image
@@ -63,10 +69,6 @@ These libraries competed in decoding the following images:
 - A small (64x64) DXT1 encoded DDS image
 - A small (64x64) DXT3 encoded DDS image
 - A small (64x64) DXT5 encoded DDS image
-
-[![Pfim-benchmark1](img/benchmark.png)](img/benchmark.png)
-
-The light blue is Pfim. Notice that it sets the record for highest throughput for each category relative to all the other decoders benchmarked.
 
 The benchmarking was done through [Benchmarkdotnet](https://github.com/dotnet/BenchmarkDotNet) and the benchmark code can
 be found in the repo.
