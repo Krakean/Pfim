@@ -55,7 +55,7 @@ The contestants:
 
 [![Pfim-benchmark1](img/benchmark.png)](img/benchmark.png)
 
-Notice that it sets the record for highest throughput for each category relative to all the other decoders benchmarked.
+Notice Pfim is one of the fastest if not the fastest in each decoding each image.
 
 **Caveat**: Some libraries do much more than decode images, and may not have the time or want the sacrifice that may come with optimizing the decoding process.
 
