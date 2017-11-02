@@ -8,10 +8,13 @@ used on your linux server, Windows Form, or WPF app!
 
 ## Motivation
 
-I needed a C# [Targa](https://en.wikipedia.org/wiki/Truevision_TGA) and
-[Direct Draw Surface (DDS)](https://en.wikipedia.org/wiki/DirectDraw_Surface)
-decoder and the ones out there didn't satisfy my performance needs and portability,
-so I wrote my own.
+I needed a C# [Targa](https://en.wikipedia.org/wiki/Truevision_TGA) and [Direct
+Draw Surface (DDS)](https://en.wikipedia.org/wiki/DirectDraw_Surface) decoder
+and the ones out there didn't satisfy my performance and portability needs, so
+I wrote my own. As consequence, Pfim does not parse every Targa and DDS image,
+but every image that I've seen in the wild is supported. If your image is not
+supported, please create an [issue](https://github.com/nickbabcock/Pfim/issues)
+with the image attached.
 
 ## Installation
 
@@ -40,6 +43,8 @@ IImage image = Dds.Create(stream);
 // Creates a targa image
 IImage image2 = Targa.Create(stream);
 {% endhighlight %}
+
+Every image is decoded into a 24bit RGB or 32bit RGBA format, as denoted by `image.Format`.
 
 ## Benchmarks
 
