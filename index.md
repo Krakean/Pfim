@@ -50,7 +50,7 @@ Every image is decoded into a 24bit RGB or 32bit RGBA format, as denoted by `ima
 
 The contestants:
 
-- Pfim 0.4.4
+- Pfim 0.5.0
 - [DevIL](http://openil.sourceforge.net/) 0.0.13
 - [FreeImage](http://freeimage.sourceforge.net/) 4.3.6
 - [ImageMagick](https://www.imagemagick.org/script/index.php) 7.4.3
@@ -146,6 +146,20 @@ unsafe
 {% endhighlight %}
 
 ## Release Notes
+
+### 0.5.0 - March 18th 2018
+
+* Support for 24bit rgb dds images
+* Support for additional 16bit dds images
+  * Rgba16 (each channel is 4 bits)
+  * R5g5b5a1
+  * R5g6b5
+  * R5g5b5
+* Bug fixes for currently supported dds images
+* Initial implementation for interpreting tga color maps
+* Support for 16bit R5g5b5 tga images
+* Support for 8bit tga images
+* Fix bad calculation of tga strides
 
 ### 0.4.4 - October 31st 2017
 * Fix red and blue color swap for TopLeft encoded targa images
