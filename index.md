@@ -61,6 +61,13 @@ The contestants:
 
 [![Pfim-benchmark1](img/benchmark.png)](img/benchmark.png)
 
+Each row represents an image that all contestants are given to decode. The
+number of times a library can decode that image in a given time frame is the
+throughput. Every cell shows the relative throughput to the fastest decoder in
+the row (which has a relative throughput of 1.0). A relative throughput of
+`0.1` would mean that the library is 10x slower than the library that has `1.0`
+in the same row.
+
 Notice Pfim is one of the fastest if not the fastest in each decoding each image.
 
 **Caveat**: Some libraries do much more than decode images, and may not have the time or want the sacrifice that may come with optimizing the decoding process.
