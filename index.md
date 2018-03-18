@@ -50,13 +50,14 @@ Every image is decoded into a 24bit RGB or 32bit RGBA format, as denoted by `ima
 
 The contestants:
 
-- Pfim
-- [DevIL](http://openil.sourceforge.net/)
-- [FreeImage](http://freeimage.sourceforge.net/)
-- [ImageMagick](https://www.imagemagick.org/script/index.php)
-- [TargaImage](https://www.codeproject.com/Articles/31702/NET-Targa-Image-Reader)
-- [ImageFormats](https://github.com/dbrant/imageformats)
-- [StbSharp](https://github.com/rds1983/StbSharp)
+- Pfim 0.4.4
+- [DevIL](http://openil.sourceforge.net/) 0.0.13
+- [FreeImage](http://freeimage.sourceforge.net/) 4.3.6
+- [ImageMagick](https://www.imagemagick.org/script/index.php) 7.4.3
+- [TargaImage](https://www.codeproject.com/Articles/31702/NET-Targa-Image-Reader) 1.0
+- [ImageFormats](https://github.com/dbrant/imageformats) 1.0
+- [StbSharp](https://github.com/rds1983/StbSharp) 0.6.8.33
+- [TgaSharpLib](https://github.com/ALEXGREENALEX/TGASharpLib) 1.0
 
 [![Pfim-benchmark1](img/benchmark.png)](img/benchmark.png)
 
