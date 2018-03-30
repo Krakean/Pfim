@@ -11,10 +11,9 @@ used on your linux server, Windows Form, or WPF app!
 I needed a C# [Targa](https://en.wikipedia.org/wiki/Truevision_TGA) and [Direct
 Draw Surface (DDS)](https://en.wikipedia.org/wiki/DirectDraw_Surface) decoder
 and the ones out there didn't satisfy my performance and portability needs, so
-I wrote my own. As consequence, Pfim does not parse every Targa and DDS image,
-but every image that I've seen in the wild is supported. If your image is not
-supported, please create an [issue](https://github.com/nickbabcock/Pfim/issues)
-with the image attached.
+I wrote my own. As consequence, Pfim does may not parse every Targa and DDS
+image. If your image is not supported, please create an
+[issue](https://github.com/nickbabcock/Pfim/issues) with the image attached.
 
 ## Installation
 
