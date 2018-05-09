@@ -49,7 +49,7 @@ Every image is decoded into a 24bit RGB or 32bit RGBA format, as denoted by `ima
 
 The contestants:
 
-- Pfim 0.5.0
+- Pfim 0.5.1
 - [DevIL](http://openil.sourceforge.net/) 0.0.13
 - [FreeImage](http://freeimage.sourceforge.net/) 4.3.6
 - [ImageMagick](https://www.imagemagick.org/script/index.php) 7.4.3
@@ -145,6 +145,16 @@ unsafe
 {% endhighlight %}
 
 ## Release Notes
+
+### 0.5.1 - May 8th 2018
+
+* Expose `BitsPerPixel` in `IImage`
+* Add configuration to the decoding process via `PfimConfig`:
+  * Configurable buffer size for chunk decoding
+  * Allow opt-out of DDS BC decompression to allow for GPU offload.
+* Optimize fast path for decoding `byte[]` data
+* Latency of decoding BC DDS images decreased by 10%
+* Highly experimental decoding of DX10 images.
 
 ### 0.5.0 - March 18th 2018
 
