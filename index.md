@@ -4,15 +4,16 @@
 
 Pfim is a .NET Standard 1.0 compatible Targa (tga) and Direct Draw Surface
 (dds) decoding library with an emphasis on speed and ease of use. Pfim can be
-used on your linux server, Windows Form, or WPF app!
+used on .NET core, .NET 4.6, or Mono, so there is almost no place Pfim can't be
+deployed.
 
 ## Motivation
 
 I needed a C# [Targa](https://en.wikipedia.org/wiki/Truevision_TGA) and [Direct
 Draw Surface (DDS)](https://en.wikipedia.org/wiki/DirectDraw_Surface) decoder
 and the ones out there didn't satisfy my performance and portability needs, so
-I wrote my own. As consequence, Pfim does may not parse every Targa and DDS
-image. If your image is not supported, please create an
+I wrote my own. As consequence, Pfim may not parse every Targa and DDS image.
+If your image is not supported, please create an
 [issue](https://github.com/nickbabcock/Pfim/issues) with the image attached.
 
 ## Installation
@@ -23,7 +24,7 @@ image. If your image is not supported, please create an
 
 Pfim emphasizes on being frontend and backend agnostic. While it can be used
 anywhere, the downside is that you may need some code to display the image in
-whatever form desired, but as you'll see it is not that hard!
+whatever form desired, but as you'll see it is not hard!
 
 {% highlight csharp %}
 // Load image from file path
@@ -42,8 +43,6 @@ IImage image = Dds.Create(stream);
 // Creates a targa image
 IImage image2 = Targa.Create(stream);
 {% endhighlight %}
-
-Every image is decoded into a 24bit RGB or 32bit RGBA format, as denoted by `image.Format`.
 
 ## Benchmarks
 
@@ -145,6 +144,14 @@ unsafe
 {% endhighlight %}
 
 ## Release Notes
+
+### 0.6.0 - March 28th 2019
+
+* Added: `IImage::ApplyColorMap`, which will apply a colormap to the image, overwriting previous data and metadata like format, stride, pixel depth, etc. An example of a colormap is when an image only uses 256 colors. Instead of consuming 32 bits per pixel on disk, the image data instead will consist of 8 bit indices into the colormap located in the header of an image.
+* Support Targa images orientated in the top left corner.
+* Targa images encoded in the top right or bottom right corners (two extremely rare formats) fallback to bottom left corner decoding.
+* Fix errors or incorrect decoding of dds images with widths and heights that aren't divisible by their block size.
+* Fix `MipMapCount` misspelling in `DdsHeader`
 
 ### 0.5.2 - August 2nd 2018
 
